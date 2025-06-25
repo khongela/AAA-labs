@@ -14,12 +14,9 @@ public class Main {
         ArrayList<Integer> randoms = new ArrayList<Integer>(n);
         int randomNo;
         for (int k = 0; k < n; k++){
-            while (true){
+            do {
                 randomNo = (int) (Math.random() * 101);
-                if (!(randoms.contains(randomNo))){
-                    break;
-                }
-            }
+            } while (randoms.contains(randomNo));
             randoms.add(randomNo);
         }
         return randoms;
@@ -29,12 +26,9 @@ public class Main {
         ArrayList<Integer> randoms = new ArrayList<Integer>(n);
         for (int k = 0; k < n; k++){
             int randomNo;
-            while (true){
+            do {
                 randomNo = (int) (Math.random() * 101);
-                if (!(randoms.contains(randomNo))){
-                    break;
-                }
-            }
+            } while (randoms.contains(randomNo));
             randoms.add(randomNo);
         }
         Collections.sort(randoms);
@@ -46,15 +40,12 @@ public class Main {
         ArrayList<Integer> randoms = new ArrayList<Integer>(n);
         for (int k = 0; k < n; k++){
             int randomNo;
-            while (true){
+            do {
                 randomNo = (int) (Math.random() * 101);
-                if (!(randoms.contains(randomNo))){
-                    break;
-                }
-            }
+            } while (randoms.contains(randomNo));
             randoms.add(randomNo);
         }
-        Collections.sort(randoms, Collections.reverseOrder());
+        randoms.sort(Collections.reverseOrder());
         return randoms;
     }
     }
