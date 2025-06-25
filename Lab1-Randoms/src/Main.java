@@ -1,7 +1,4 @@
 import java.util.*;
-
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
         System.out.println("Enter the number of random numbers to be generated");
@@ -15,8 +12,15 @@ public class Main {
 
     public static ArrayList<Integer> randoms(int n){
         ArrayList<Integer> randoms = new ArrayList<Integer>(n);
+        int randomNo;
         for (int k = 0; k < n; k++){
-            randoms.add((int)(Math.random() * 101));
+            while (true){
+                randomNo = (int) (Math.random() * 101);
+                if (!(randoms.contains(randomNo))){
+                    break;
+                }
+            }
+            randoms.add(randomNo);
         }
         return randoms;
     }
@@ -24,7 +28,14 @@ public class Main {
     public static ArrayList<Integer> randomsASC(int n){
         ArrayList<Integer> randoms = new ArrayList<Integer>(n);
         for (int k = 0; k < n; k++){
-            randoms.add((int)(Math.random() * 101));
+            int randomNo;
+            while (true){
+                randomNo = (int) (Math.random() * 101);
+                if (!(randoms.contains(randomNo))){
+                    break;
+                }
+            }
+            randoms.add(randomNo);
         }
         Collections.sort(randoms);
         return randoms;
@@ -34,7 +45,14 @@ public class Main {
     public static ArrayList<Integer> randomsDESC(int n){
         ArrayList<Integer> randoms = new ArrayList<Integer>(n);
         for (int k = 0; k < n; k++){
-            randoms.add((int)(Math.random() * 101));
+            int randomNo;
+            while (true){
+                randomNo = (int) (Math.random() * 101);
+                if (!(randoms.contains(randomNo))){
+                    break;
+                }
+            }
+            randoms.add(randomNo);
         }
         Collections.sort(randoms, Collections.reverseOrder());
         return randoms;
